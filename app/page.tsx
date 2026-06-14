@@ -1,6 +1,24 @@
+import ExploreBtn from "@/components/ExploreBtn"
+
 const page = () => {
   return (
-    <h1>welcome to the page</h1>
+    <section>
+      <h1 className="text-center">The Hub for All Your Events <br /> Events You Cannot Miss</h1>
+      <p className="text-center text-lg text-muted-foreground mt-5">
+        Discover the latest and greatest events in the world of software development. <br /> hackathons, conferences, webinars, and more - all in one place.
+      </p>
+      <ExploreBtn />
+
+      <div className="mt-20 space-y-7">
+        <h3>Upcoming Events</h3>
+
+        <ul className="events">
+          {[1, 2, 3, 4, 5].map((event) => (
+            <li key={event}>Event {event}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
   )
 }
 
