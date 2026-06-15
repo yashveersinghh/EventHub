@@ -36,17 +36,17 @@ export default function RootLayout({
         <NavBar />
         <div className="pointer-events-none absolute inset-0 z-[-1] min-h-screen">
           <LightRays
-            raysOrigin="top-center"
+            raysOrigin="top-center-offset"
             raysColor="#86d8ff"
-            raysSpeed={0.18}
-            lightSpread={0.6}
-            rayLength={2.35}
+            raysSpeed={0.5}
+            lightSpread={1.5}
+            rayLength={6}
             followMouse={true}
-            mouseInfluence={0.03}
+            mouseInfluence={0.1}
             noiseAmount={0.03}
             distortion={0.06}
             pulsating={false}
-            fadeDistance={0.95}
+            fadeDistance={5}
             saturation={1}
             className="event-rays"
           />
