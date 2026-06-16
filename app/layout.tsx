@@ -30,28 +30,27 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("min-h-screen", "antialiased", schibstedGrotesk.variable, martianMono.variable, "font-sans", inter.variable)}
-    >
-      <body className="relative min-h-full overflow-x-hidden bg-transparent text-foreground">
+      className={cn("min-h-screen", "antialiased", schibstedGrotesk.variable, martianMono.variable, "font-sans", inter.variable)}>
+      <body className="relative min-h-full overflow-x-hidden bg-[#05070b] text-foreground">
         <NavBar />
         <div className="pointer-events-none absolute inset-0 z-[-1] min-h-screen">
           <LightRays
-            raysOrigin="top-center-offset"
-            raysColor="#86d8ff"
-            raysSpeed={0.5}
-            lightSpread={1.5}
-            rayLength={6}
+            raysOrigin="top-right-offset"
+            raysColor="#f3f6fb"
+            raysSpeed={0.42}
+            lightSpread={1.25}
+            rayLength={7}
             followMouse={true}
-            mouseInfluence={0.1}
-            noiseAmount={0.03}
-            distortion={0.06}
+            mouseInfluence={0.18}
+            noiseAmount={0.012}
+            distortion={0.03}
             pulsating={false}
-            fadeDistance={5}
+            fadeDistance={4.2}
             saturation={1}
             className="event-rays"
           />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(114,194,255,0.14),transparent_36%),radial-gradient(circle_at_82%_18%,rgba(132,89,255,0.12),transparent_34%),radial-gradient(circle_at_50%_100%,rgba(255,255,255,0.03),transparent_35%),linear-gradient(180deg,rgba(255,255,255,0)_0%,rgba(10,13,18,0.2)_50%,rgba(10,13,18,0.75)_100%)]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.04)_0%,transparent_16%,transparent_84%,rgba(255,255,255,0.04)_100%)] opacity-70" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_22%_16%,rgba(148,163,184,0.16),transparent_30%),radial-gradient(circle_at_78%_14%,rgba(226,232,240,0.08),transparent_28%),radial-gradient(circle_at_50%_100%,rgba(255,255,255,0.03),transparent_35%),linear-gradient(180deg,rgba(15,23,42,0.18)_0%,rgba(8,10,14,0.5)_52%,rgba(3,5,8,0.92)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.03)_0%,transparent_18%,transparent_82%,rgba(255,255,255,0.03)_100%)] opacity-60" />
         </div>
         <main className="relative z-10">
           {children}
