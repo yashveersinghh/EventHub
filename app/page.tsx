@@ -10,16 +10,61 @@ const page = async () => {
   cacheLife('hours');
   const response = await fetch(`${BASE_URL}/api/events`);
   const { events } = await response.json();
+  const eventCount = events?.length ?? 0;
   return (
-    <section>
-      <h1 className="text-center">The Hub for All Your Events <br /> Events You Cannot Miss</h1>
-      <p className="text-center text-lg text-muted-foreground mt-5">
-        Discover the latest and greatest events in the world of software development. <br /> hackathons, conferences, webinars, and more - all in one place.
-      </p>
-      <ExploreBtn />
+    <section className="space-y-20 pb-12" id="home">
+      <div className="hero-shell">
+        <div className="hero-copy">
+          <p className="eyebrow">Curated for builders, developers, and students</p>
+          <h1>The hub for events you actually want to attend</h1>
+          <p className="subheading max-w-2xl text-balance">
+            Discover hackathons, conferences, webinars, and community meetups in one polished place.
+            Stay ahead of what’s happening without the clutter.
+          </p>
 
-      <div className="mt-20 space-y-7">
-        <h3>Upcoming Events</h3>
+          <div className="hero-actions">
+            <ExploreBtn />
+          </div>
+
+          <div className="hero-stats">
+            <div>
+              <span>{eventCount}</span>
+              <p>Live events</p>
+            </div>
+            <div>
+              <span>Verified</span>
+              <p>Trusted listings</p>
+            </div>
+            <div>
+              <span>Curated</span>
+              <p>Handpicked events</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="hero-panel">
+          <div className="hero-panel-glow" />
+          <div className="hero-panel-card">
+            <p className="panel-label">WHY EVENTHUB?</p>
+            <h3>Everything you need to discover tech events</h3>
+            <p>
+              Stay up to date with the latest hackathons, conferences, workshops,<br /> and tech meetups happening around you.
+            </p>
+            
+          </div>
+        </div>
+      </div>
+
+      <div id="events" className="section-shell scroll-mt-24">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">What’s next</p>
+            <h3>Upcoming Events</h3>
+          </div>
+          <p>
+            Fresh listings, sharper spacing, and hover states that feel deliberate instead of loud.
+          </p>
+        </div>
 
         <ul className="events">
           {events && events.length > 0 && events.map((event: IEvent) => (

@@ -18,10 +18,10 @@ const NavBar = () => {
              </span>
              <p className="tracking-[0.16em] text-white/90">EventHub</p>
            </Link> 
-           <ul>
-            <Link href="/">Home</Link>
-            <Link href="/">Events</Link>
-            <Link href="/">Create Event</Link>
+           <ul className="nav-links">
+            <li><Link href="/" className="nav-link">Home</Link></li>
+            <li><Link href="#events" className="nav-link">Events</Link></li>
+            <li><Link href="/" className="nav-link nav-link-cta">Create Event</Link></li>
            </ul>
         </nav>
     </header>

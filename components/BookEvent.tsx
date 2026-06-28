@@ -7,13 +7,15 @@ const BookEvent = ({ eventId, slug }: { eventId: string, slug: string }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const { success} = await createBooking({ eventId, slug, email });
-
+    
     if(success){
       setSubmitted(true);
     }else{
       console.error('Booking creation failed');
     }
+    e.preventDefault();
   }
   return (
     <div id="book-event">
