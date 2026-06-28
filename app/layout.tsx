@@ -30,8 +30,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("min-h-screen", "antialiased", schibstedGrotesk.variable, martianMono.variable, "font-sans", inter.variable)}>
-      <body className="relative min-h-full overflow-x-hidden bg-[#05070b] text-foreground">
+      className={cn("min-h-screen", "antialiased", schibstedGrotesk.variable, martianMono.variable, "font-sans", inter.variable)}
+      suppressHydrationWarning>
+      <body className="relative min-h-full overflow-x-hidden bg-[#05070b] text-foreground" suppressHydrationWarning>
         <NavBar />
         <div className="pointer-events-none absolute inset-0 z-[-1] min-h-screen">
           <LightRays
