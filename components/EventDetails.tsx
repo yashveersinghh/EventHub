@@ -1,12 +1,10 @@
 import BookEvent from "@/components/BookEvent";
 import EventCard from "@/components/EventCard";
 import { IEvent } from "@/database";
-import { getSimilarEventsBySlug } from "@/lib/actions/event.actions";
+import { getEventBySlug, getSimilarEventsBySlug } from "@/lib/actions/event.actions";
 import { cacheLife } from "next/cache";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const EventDetailItem = ({ icon, alt, label }: { icon: string, alt: string, label: string }) => (
   <div className="flex-row-gap-2 items-center">
@@ -40,8 +38,7 @@ const EventTags = ({ tags }: { tags: string[] }) => (
 const EventDetails = async ({ slug }: { slug: string }) => {
   'use cache';
   cacheLife('hours');
-  const request = await fetch(`${BASE_URL}/api/events/${slug}`);
-  const { event } = await request.json();
+  const event = await getEventBySlug(slug);
   
   if(!event) return notFound();
 
